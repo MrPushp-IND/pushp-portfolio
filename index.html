@@ -527,7 +527,12 @@
       padding: .18rem .55rem; display: inline-block; letter-spacing: .03em;
     }
     /* Make project grid 2-col when 5 cards */
-    .proj-grid { grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); }
+    .proj-grid { grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); align-items: start; }
+    .proj-featured { grid-column: 1 / -1; }
+    @media (min-width: 900px) {
+      .proj-featured .proj-solution-box .roi-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+      .proj-featured .proj-problem-box { max-width: 70%; }
+    }
 
   </style>
 </head>
@@ -603,7 +608,7 @@
       </div>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-n" data-target="30">0</div>
+          <div class="stat-n" data-target="20">0</div>
           <div class="stat-l">SQL Queries Written</div>
         </div>
         <div class="stat-card">
@@ -611,11 +616,11 @@
           <div class="stat-l">Certifications Earned</div>
         </div>
         <div class="stat-card">
-          <div class="stat-n" data-target="5">0</div>
+          <div class="stat-n" data-target="7">0</div>
           <div class="stat-l">Analytics Projects</div>
         </div>
         <div class="stat-card">
-          <div class="stat-n" data-target="3">0</div>
+          <div class="stat-n" data-target="4">0</div>
           <div class="stat-l">Power BI Dashboards Built</div>
         </div>
       </div>
@@ -648,6 +653,7 @@
           <span class="stag">Business Intelligence</span><span class="stag">Data Cleaning</span>
           <span class="stag">Data Wrangling</span><span class="stag">Dashboard Design</span>
           <span class="stag">Data Storytelling</span><span class="stag">Report Automation</span>
+          <span class="stag">Financial Analysis</span><span class="stag">KPI Design</span><span class="stag">Insight &amp; Recommendation</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -670,41 +676,165 @@
   <div class="si reveal">
     <div class="s-tag">/ Featured work</div>
     <h2 class="s-title">Projects</h2>
-    <p class="s-sub">End-to-end analytics projects — from executive financial dashboards to SQL deep-dives — that turn raw data into board-level decisions.</p>
+    <p class="s-sub">End-to-end analytics projects framed the way a business analyst works — problem, analysis, insight and a recommendation tied to measurable impact.</p>
     <div class="proj-grid">
 
-      <div class="proj-card">
-        <div class="proj-num">01 / Power BI · Financial Analytics</div>
-        <h3 class="proj-title">Apollo Hospitals FY25 Executive Dashboard</h3>
-        <p class="proj-desc">A 5-page, CEO-ready Power BI report built from Apollo Hospitals' FY25 annual report — covering consolidated financials, segment performance, regional operations, the expansion blueprint, and balance-sheet health.</p>
+      <div class="proj-card proj-featured">
+        <div class="proj-featured-badge">Featured</div>
+        <div class="proj-num">01 / Executive BI · Healthcare Finance</div>
+        <h3 class="proj-title">Apollo Hospitals FY25 — CEO Performance Dashboard</h3>
+        <p class="proj-desc">A board-ready, 4-page Power BI report built from Apollo Hospitals' FY25 annual report — translating 100+ pages of financial disclosure into a decision-ready view across group P&amp;L, segment economics, regional efficiency, expansion capex and balance-sheet health.</p>
+        <div class="proj-problem-box">
+          <div class="ppb-title">Problem</div>
+          <ul class="ppb-list">
+            <li>Dense annual-report financials offered no at-a-glance view of where value was created or where margin leaked</li>
+            <li>No single lens to compare segment profitability, regional revenue quality and the ₹8,094 Cr expansion plan</li>
+          </ul>
+        </div>
+        <div class="proj-solution-box">
+          <div class="psb-title">Analysis · Insight · Recommendation</div>
+          <div class="roi-grid">
+            <div class="roi-item">
+              <div class="roi-label">Profit outpacing revenue 4×</div>
+              <div class="roi-detail">Modelled YoY KPIs with DAX — PAT grew +61% on +14% revenue, signalling operating leverage finally converting scale into profit.</div>
+              <div class="roi-metrics"><span class="roi-gain">▲ PAT ₹1,505 Cr (+61%)</span></div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-label">Digital arm turned profitable</div>
+              <div class="roi-detail">Surfaced a ₹250 Cr EBITDA swing in Apollo HealthCo — from a loss to profit in one year — validating the digital + pharmacy bet.</div>
+              <div class="roi-metrics"><span class="roi-gain">▲ −₹82 Cr → +₹168 Cr EBITDA</span></div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-label">Recommendation: Eastern region ARPOB uplift</div>
+              <div class="roi-detail">Built an occupancy-vs-ARPOB efficiency matrix that exposed the Eastern region at the highest occupancy (73%) yet lowest revenue/bed (₹48K vs ₹78K). Recommended a richer case mix over fresh capex.</div>
+              <div class="roi-metrics"><span class="roi-cost">Cost: near-zero capex</span><span class="roi-gain">ROI: close the ₹30K ARPOB gap</span></div>
+            </div>
+          </div>
+        </div>
         <div class="proj-tags">
           <span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">Power Query</span>
-          <span class="ptag">Financial Analysis</span><span class="ptag">Data Modeling</span>
+          <span class="ptag">Financial Analysis</span><span class="ptag">Data Modeling</span><span class="ptag">Executive Reporting</span>
         </div>
         <ul class="proj-ul">
-          <li>Engineered 30+ DAX measures with dynamic YoY arrow indicators across a multi-sheet financial model</li>
-          <li>Surfaced executive insights: PAT up 61%, Apollo HealthCo's ₹250 Cr EBITDA turnaround, and a regional ARPOB efficiency gap</li>
-          <li>Distilled a 100+ page annual report into a 5-page decision view spanning segment, regional & ₹8,094 Cr expansion analysis</li>
+          <li>Engineered an 11-sheet data model with 18+ DAX measures, YoY indicators &amp; conditional formatting</li>
+          <li>Validated every figure against the source filing — caught &amp; corrected unit-scaling errors pre-delivery</li>
+          <li>Distilled a 100-page report into a 4-page narrative: results today vs. the growth blueprint ahead</li>
         </ul>
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">02 / SQL · Financial Analytics</div>
-        <h3 class="proj-title">ITC Limited FY25 Segment Analysis</h3>
-        <p class="proj-desc">A SQL deep-dive into ITC Limited's FY25 performance across its core business segments — quantifying where revenue, growth, and profitability actually come from across the conglomerate.</p>
+        <div class="proj-num">02 / SQL · Capital Allocation</div>
+        <h3 class="proj-title">ITC Ltd FY25 — Segment Profitability &amp; Capital Allocation</h3>
+        <p class="proj-desc">A SQL capital-allocation analysis of ITC's ₹81,613 Cr FY25 segment financials — answering the board-level question: which businesses earn their cost of capital, and where should the next rupee go?</p>
+        <div class="proj-problem-box">
+          <div class="ppb-title">Problem</div>
+          <ul class="ppb-list">
+            <li>Four very different businesses, one capital pool — margin-only views couldn't say which segments deserved investment</li>
+            <li>Strategy directs growth capital toward the lowest-returning segments, quietly diluting group returns</li>
+          </ul>
+        </div>
+        <div class="proj-solution-box">
+          <div class="psb-title">Solution · Insight · Recommendation</div>
+          <div class="roi-grid">
+            <div class="roi-item">
+              <div class="roi-label">Profit is dangerously concentrated</div>
+              <div class="roi-detail">A 6-query pipeline (LAG/RANK window functions, CTEs, hurdle-rate logic) showed Cigarettes earns ~86% of profit on ~39% of revenue — while two segments sit below a 15% ROCE hurdle.</div>
+              <div class="roi-metrics"><span class="roi-gain">▲ ROCE ranked: 201% · 22% · 12% · 8%</span></div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-label">Recommendation: reallocate toward returns</div>
+              <div class="roi-detail">Fund the highest-ROCE growth (Agri) first; set return-improvement targets for below-hurdle segments before committing more capital.</div>
+              <div class="roi-metrics"><span class="roi-cost">Cost: ~₹4 lakh analysis</span><span class="roi-gain">ROI: ~₹200 Cr/yr incremental PBIT</span></div>
+            </div>
+          </div>
+        </div>
         <div class="proj-tags">
-          <span class="ptag">SQL</span><span class="ptag">CTEs</span><span class="ptag">JOINs</span>
-          <span class="ptag">Aggregations</span><span class="ptag">Financial Analysis</span>
+          <span class="ptag">SQL</span><span class="ptag">Window Functions</span><span class="ptag">CTEs</span>
+          <span class="ptag">ROCE Analysis</span><span class="ptag">Capital Allocation</span>
         </div>
         <ul class="proj-ul">
-          <li>Wrote 15+ SQL queries across ITC's segments — FMCG-Cigarettes, FMCG-Others, Hotels, Agri-Business &amp; Paperboards</li>
-          <li>Computed segment-wise revenue contribution, YoY growth &amp; profitability to isolate the real revenue and margin drivers</li>
-          <li>[Your headline finding — e.g., fastest-growing or highest-margin segment]</li>
+          <li>Skills built: LAG / RANK / SUM OVER window functions, CTE pipelines &amp; hurdle-rate (economic-spread) logic</li>
+          <li>Quantified value destroyed vs a 15% hurdle: −₹465 Cr (FMCG-Others) and −₹700 Cr (Paperboards)</li>
+          <li>Packaged as a CEO-ready recommendation with full cost-vs-benefit framing</li>
         </ul>
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">03 / SQL Analytics</div>
+        <div class="proj-num">03 / Python · Forecasting</div>
+        <h3 class="proj-title">Britannia FY25 — Demand Forecasting &amp; Inventory Optimisation</h3>
+        <p class="proj-desc">SKU × region SARIMA demand forecasting on a 153K-row dataset calibrated to Britannia's real ₹17,943 Cr FY25 financials — converted into a statistical inventory policy with a rupee-quantified payoff.</p>
+        <div class="proj-problem-box">
+          <div class="ppb-title">Problem</div>
+          <ul class="ppb-list">
+            <li>~₹197 Cr/yr of sales lost to stockouts while ~30 days of inventory locked up working capital</li>
+            <li>Demand forecast too coarsely (national level) to drive product-level stocking decisions</li>
+          </ul>
+        </div>
+        <div class="proj-solution-box">
+          <div class="psb-title">Solution · Insight · Recommendation</div>
+          <div class="roi-grid">
+            <div class="roi-item">
+              <div class="roi-label">Forecasts that are honest — and usable</div>
+              <div class="roi-detail">SARIMA per SKU-region achieved ~8% MAPE on a 60-day backtest; ABC analysis showed 24 of 42 SKUs drive 80% of revenue — focusing effort where it pays.</div>
+              <div class="roi-metrics"><span class="roi-gain">▲ ~8% MAPE · 95% service-level policy</span></div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-label">Recommendation: demand-driven buffers</div>
+              <div class="roi-detail">Statistical safety stock + reorder points cut inventory cover from ~30 to ~25 days — releasing cash while recovering stockout sales.</div>
+              <div class="roi-metrics"><span class="roi-cost">Cost: ~₹20 lakh pilot</span><span class="roi-gain">ROI: ₹147 Cr cash + ₹52 Cr/yr · payback &lt; 1 month</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-tags">
+          <span class="ptag">Python</span><span class="ptag">pandas</span><span class="ptag">statsmodels</span>
+          <span class="ptag">SARIMA</span><span class="ptag">Inventory Analytics</span>
+        </div>
+        <ul class="proj-ul">
+          <li>Skills built: time-series forecasting, backtesting / MAPE evaluation, safety-stock &amp; reorder-point design</li>
+          <li>Engineered the 153K-row dataset to reconcile exactly to reported FY25 totals (methodology documented)</li>
+          <li>Quantified ~₹147 Cr one-time working-capital release + ~₹52 Cr/yr recurring benefit</li>
+        </ul>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">04 / Power BI · Executive Cockpit</div>
+        <h3 class="proj-title">Maruti Suzuki FY25 — Executive Financial Cockpit</h3>
+        <p class="proj-desc">A 4-page executive Power BI cockpit on Maruti's real FY25 results (₹1,45,115 Cr net sales · 22.34 lakh units) — a 30-second view of volume, revenue, mix and YoY across 17 models and 5 regions.</p>
+        <div class="proj-problem-box">
+          <div class="ppb-title">Problem</div>
+          <ul class="ppb-list">
+            <li>Leadership had no single live view across models, segments, channels and regions — just a slow manual monthly pack</li>
+            <li>Backward-looking reporting meant soft models / regions were caught a cycle too late</li>
+          </ul>
+        </div>
+        <div class="proj-solution-box">
+          <div class="psb-title">Solution · Insight · Recommendation</div>
+          <div class="roi-grid">
+            <div class="roi-item">
+              <div class="roi-label">FY25 growth was export-led</div>
+              <div class="roi-detail">A star schema powering 25+ DAX measures (SAMEPERIODLASTYEAR time intelligence) surfaced exports +17.5% vs near-flat domestic +2.7% — and SUV premiumisation lifting realisation per vehicle.</div>
+              <div class="roi-metrics"><span class="roi-gain">▲ Exports +17.5% · Domestic +2.7%</span></div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-label">Recommendation: retire the manual pack</div>
+              <div class="roi-detail">A monthly-refresh cockpit replaces manual reporting and flags soft segments a full cycle earlier.</div>
+              <div class="roi-metrics"><span class="roi-cost">Cost: ~₹2–4 lakh build</span><span class="roi-gain">ROI: ~₹4 lakh/yr saved + earlier action</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-tags">
+          <span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">Star Schema</span>
+          <span class="ptag">Time Intelligence</span><span class="ptag">Power Query</span>
+        </div>
+        <ul class="proj-ul">
+          <li>Skills built: dimensional modelling (star schema), CALCULATE / time-intelligence DAX, executive dashboard UX</li>
+          <li>Custom brand theme (JSON) with drill paths from group KPIs down to model-level detail</li>
+          <li>Calibrated to reconcile exactly to Maruti's reported net sales and unit totals</li>
+        </ul>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">05 / SQL Analytics</div>
         <h3 class="proj-title">WSDA Music Sales Analytics</h3>
         <p class="proj-desc">Deep-dive SQL analysis on a 5-table relational music database to extract sales insights, customer segmentation, and inventory turnover trends.</p>
         <div class="proj-tags">
@@ -719,7 +849,7 @@
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">04 / Power BI Dashboard</div>
+        <div class="proj-num">06 / Power BI Dashboard</div>
         <h3 class="proj-title">OLA Ride Operations Dashboard</h3>
         <p class="proj-desc">An end-to-end Power BI dashboard analysing OLA's ride operations data — covering booking trends, vehicle performance, cancellation patterns, and revenue insights.</p>
         <div class="proj-tags">
@@ -734,7 +864,7 @@
       </div>
 
       <div class="proj-card">
-        <div class="proj-num">05 / Power BI Dashboard</div>
+        <div class="proj-num">07 / Power BI Dashboard</div>
         <h3 class="proj-title">HR Analytics Dashboard</h3>
         <p class="proj-desc">A comprehensive HR analytics Power BI report uncovering workforce attrition patterns, department-level headcount, and key employee performance metrics.</p>
         <div class="proj-tags">
@@ -801,17 +931,17 @@
       <div class="edu-card">
         <div class="edu-badge ip">In Progress</div>
         <div class="edu-deg">PGDM — Business Analytics &amp; Human Resource</div>
-        <div class="edu-sch">GNIOT Institute of Management Studies<br>Greater Noida, India</div>
+        <div class="edu-sch">GNIOT Institute of Management Studies<br>Greater Noida, India · Expected 2027</div>
       </div>
       <div class="edu-card">
         <div class="edu-badge">Completed</div>
         <div class="edu-deg">B.Tech — Bachelor of Technology</div>
-        <div class="edu-sch">APJ Abdul Kalam Technical University</div>
+        <div class="edu-sch">APJ Abdul Kalam Technical University · 2025</div>
       </div>
       <div class="edu-card">
         <div class="edu-badge">Completed</div>
         <div class="edu-deg">Polytechnic — Mechanical Engineering</div>
-        <div class="edu-sch">GN Group of Institutes<br>Greater Noida, India</div>
+        <div class="edu-sch">GN Group of Institutes<br>Greater Noida, India · 2022</div>
       </div>
       <div class="edu-card">
         <div class="edu-badge">Completed</div>
