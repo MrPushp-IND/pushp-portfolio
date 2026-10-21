@@ -243,5 +243,6 @@ document.querySelectorAll('.cs:not(.lk)').forEach(b=>b.onclick=()=>{const p=b.cl
 const els=document.querySelectorAll('.rv');
 if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}));els.forEach(el=>io.observe(el));} else {els.forEach(el=>el.classList.add('in'));}
 </script>
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>
